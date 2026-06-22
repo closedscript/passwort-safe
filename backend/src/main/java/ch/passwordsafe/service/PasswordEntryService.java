@@ -126,6 +126,38 @@ public class PasswordEntryService {
                 .collect(Collectors.toList()); // neue Liste, Original bleibt immutable
     }
 
+    // ── Bearbeiten ────────────────────────────────────────────────────────────
+
+    public PasswordEntry update(Long userId, Long entryId, String masterPassword,
+                                 String title, String url,
+                                 String username, String password,
+                                 String email, String notes,
+                                 Long categoryId) throws Exception {
+
+        User user = userRepository.findById(userId).orElseThrow();
+        PasswordEntry entry = entryRepository.findByIdAndUserId(entryId, userId)
+                .orElseThrow(() -> new RuntimeException("Eintrag nicht gefunden"));
+
+        SecretKey key = aesService.deriveKey(masterPassword, user.getSalt());
+        String iv = aesService.generateIv();
+
+        entry.setTitle(title);
+        entry.setUrl(url);
+        entry.setIv(iv);
+        entry.setUsernameEncrypted(aesService.encrypt(username, key, iv));
+        entry.setPasswordEncrypted(aesService.encrypt(password, key, iv));
+        entry.setEmailEncrypted(aesService.encrypt(email, key, iv));
+        entry.setNotesEncrypted(aesService.encrypt(notes, key, iv));
+
+        if (categoryId != null) {
+            categoryRepository.findById(categoryId).ifPresent(entry::setCategory);
+        } else {
+            entry.setCategory(null);
+        }
+
+        return entryRepository.save(entry);
+    }
+
     // ── Löschen ───────────────────────────────────────────────────────────────
 
     public void delete(Long userId, Long entryId) {

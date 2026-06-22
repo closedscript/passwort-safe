@@ -44,5 +44,8 @@ export const getEntries = ({ categoryId, search, sortField, ascending } = {}) =>
 export const createEntry = (data) =>
   api.post('/entries', data).then(r => r.data)
 
+export const updateEntry = (id, data) =>
+  api.put(`/entries/${id}`, data).then(r => r.data)
+
 export const deleteEntry = (id) =>
   api.delete(`/entries/${id}`)

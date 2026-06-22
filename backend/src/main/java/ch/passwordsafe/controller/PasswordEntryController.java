@@ -67,6 +67,29 @@ public class PasswordEntryController {
         return ResponseEntity.ok(Map.of("message", "Eintrag erstellt"));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Map<String, String>> update(
+            Principal principal,
+            @PathVariable Long id,
+            @RequestHeader("X-Master-Password") String masterPassword,
+            @RequestBody Map<String, Object> body) throws Exception {
+
+        Long userId = getUserId(principal);
+        Long categoryId = body.get("categoryId") != null
+                ? Long.parseLong(body.get("categoryId").toString()) : null;
+
+        entryService.update(userId, id, masterPassword,
+                (String) body.get("title"),
+                (String) body.get("url"),
+                (String) body.get("username"),
+                (String) body.get("password"),
+                (String) body.get("email"),
+                (String) body.get("notes"),
+                categoryId);
+
+        return ResponseEntity.ok(Map.of("message", "Eintrag aktualisiert"));
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(Principal principal, @PathVariable Long id) {
         entryService.delete(getUserId(principal), id);
