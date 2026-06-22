@@ -65,6 +65,7 @@ public class SecurityConfig {
     }
 }
 
+@org.springframework.stereotype.Component
 @RequiredArgsConstructor
 class JwtAuthFilter extends OncePerRequestFilter {
 

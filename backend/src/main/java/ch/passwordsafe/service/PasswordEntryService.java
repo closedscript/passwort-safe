@@ -175,19 +175,19 @@ public class PasswordEntryService {
     private Map<String, Object> decryptEntry(PasswordEntry entry, SecretKey key) {
         try {
             String iv = entry.getIv();
-            return Map.of(
-                    "id", entry.getId(),
-                    "title", entry.getTitle(),
-                    "url", Optional.ofNullable(entry.getUrl()).orElse(""),
-                    "username", Optional.ofNullable(aesService.decrypt(entry.getUsernameEncrypted(), key, iv)).orElse(""),
-                    "password", Optional.ofNullable(aesService.decrypt(entry.getPasswordEncrypted(), key, iv)).orElse(""),
-                    "email", Optional.ofNullable(aesService.decrypt(entry.getEmailEncrypted(), key, iv)).orElse(""),
-                    "notes", Optional.ofNullable(aesService.decrypt(entry.getNotesEncrypted(), key, iv)).orElse(""),
-                    "categoryId", entry.getCategory() != null ? entry.getCategory().getId() : null,
-                    "categoryName", entry.getCategory() != null ? entry.getCategory().getName() : null,
-                    "createdAt", entry.getCreatedAt().toString(),
-                    "updatedAt", entry.getUpdatedAt().toString()
-            );
+            Map<String, Object> result = new java.util.HashMap<>();
+            result.put("id", entry.getId());
+            result.put("title", entry.getTitle());
+            result.put("url", Optional.ofNullable(entry.getUrl()).orElse(""));
+            result.put("username", Optional.ofNullable(aesService.decrypt(entry.getUsernameEncrypted(), key, iv)).orElse(""));
+            result.put("password", Optional.ofNullable(aesService.decrypt(entry.getPasswordEncrypted(), key, iv)).orElse(""));
+            result.put("email", Optional.ofNullable(aesService.decrypt(entry.getEmailEncrypted(), key, iv)).orElse(""));
+            result.put("notes", Optional.ofNullable(aesService.decrypt(entry.getNotesEncrypted(), key, iv)).orElse(""));
+            result.put("categoryId", entry.getCategory() != null ? entry.getCategory().getId() : null);
+            result.put("categoryName", entry.getCategory() != null ? entry.getCategory().getName() : null);
+            result.put("createdAt", entry.getCreatedAt().toString());
+            result.put("updatedAt", entry.getUpdatedAt().toString());
+            return result;
         } catch (Exception e) {
             throw new RuntimeException("Entschlüsselung fehlgeschlagen: " + entry.getId(), e);
         }

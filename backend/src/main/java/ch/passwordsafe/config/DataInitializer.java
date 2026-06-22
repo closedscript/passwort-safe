@@ -65,38 +65,38 @@ public class DataInitializer implements CommandLineRunner {
         // 28 Testeinträge – Modul 323: Stream + Lambda in seedEntries()
         List<Object[]> seeds = List.of(
             // title, url, username, password, email, notes, categoryId
-            new Object[]{"Google",         "https://google.com",         "admin",          "G00gle#2024!",     "noel@gmail.com",      "",                        privat},
-            new Object[]{"Netflix",        "https://netflix.com",        "noel",           "N3tflix@Stream",   "noel@gmail.com",      "Familien-Abo",            privat},
-            new Object[]{"GitHub",         "https://github.com",         "nveedee",        "Gh_tok3n#Sec!",    "noel@github.com",     "Persönliches Konto",     privat},
-            new Object[]{"Instagram",      "https://instagram.com",      "noel.vd",        "Insta!2024#Noel",  "noel@gmail.com",      "",                        privat},
-            new Object[]{"Spotify",        "https://spotify.com",        "noel",           "Sp0tify#Music!",   "noel@gmail.com",      "Premium",                 privat},
-            new Object[]{"Amazon",         "https://amazon.de",          "noel.vd",        "Am@zon#Shop24",    "noel@gmail.com",      "",                        privat},
-            new Object[]{"iCloud",         "https://icloud.com",         "noel@icloud.com","iCl0ud!@Apple",    "noel@icloud.com",     "2FA aktiv",               privat},
+            new Object[]{"Google",         "https://google.com",         "max.muster",     "G00gle#2024!",     "max@gmail.com",       "",                        privat},
+            new Object[]{"Netflix",        "https://netflix.com",        "max.muster",     "N3tflix@Stream",   "max@gmail.com",       "Familien-Abo",            privat},
+            new Object[]{"GitHub",         "https://github.com",         "maxmuster",      "Gh_tok3n#Sec!",    "max@github.com",      "Persönliches Konto",     privat},
+            new Object[]{"Instagram",      "https://instagram.com",      "max.muster",     "Insta!2024#Max",   "max@gmail.com",       "",                        privat},
+            new Object[]{"Spotify",        "https://spotify.com",        "max.muster",     "Sp0tify#Music!",   "max@gmail.com",       "Premium",                 privat},
+            new Object[]{"Amazon",         "https://amazon.de",          "max.muster",     "Am@zon#Shop24",    "max@gmail.com",       "",                        privat},
+            new Object[]{"iCloud",         "https://icloud.com",         "max@icloud.com", "iCl0ud!@Apple",    "max@icloud.com",      "2FA aktiv",               privat},
 
-            new Object[]{"Microsoft 365",  "https://office.com",         "noel@bbw.ch",    "M365!BBW#2024",    "noel@bbw.ch",         "BBW Schulkonto",          schule},
-            new Object[]{"Moodle BBW",     "https://moodle.bbw.ch",      "nveedee",        "M00dle#BBW!23",    "noel@bbw.ch",         "",                        schule},
-            new Object[]{"Teams BBW",      "https://teams.microsoft.com","noel@bbw.ch",    "T3ams!BBW#24",     "noel@bbw.ch",         "Schulklassen-Chat",       schule},
-            new Object[]{"Adobe CC",       "https://creativecloud.adobe.com","nveedee",    "Ad0be#CC!2024",    "noel@gmail.com",      "Schülerlizenz",           schule},
-            new Object[]{"Lucidchart",     "https://lucidchart.com",     "noel@bbw.ch",    "Lucid#Chart!23",   "noel@bbw.ch",         "UML-Diagramme",           schule},
-            new Object[]{"Overleaf",       "https://overleaf.com",       "nveedee",        "0verle@f!Latex24", "noel@gmail.com",      "LaTeX-Editor",            schule},
+            new Object[]{"Microsoft 365",  "https://office.com",         "max@schule.ch",  "M365!School#2024", "max@schule.ch",       "Schulkonto",              schule},
+            new Object[]{"Moodle",         "https://moodle.ch",          "mmuster",        "M00dle#School!23", "max@schule.ch",       "",                        schule},
+            new Object[]{"Teams",          "https://teams.microsoft.com","max@schule.ch",  "T3ams!Sch#24",     "max@schule.ch",       "Schulklassen-Chat",       schule},
+            new Object[]{"Adobe CC",       "https://creativecloud.adobe.com","mmuster",    "Ad0be#CC!2024",    "max@gmail.com",       "Schülerlizenz",           schule},
+            new Object[]{"Lucidchart",     "https://lucidchart.com",     "max@schule.ch",  "Lucid#Chart!23",   "max@schule.ch",       "UML-Diagramme",           schule},
+            new Object[]{"Overleaf",       "https://overleaf.com",       "mmuster",        "0verle@f!Latex24", "max@gmail.com",       "LaTeX-Editor",            schule},
 
-            new Object[]{"STV Portal",     "https://stv-fsg.ch",         "noel.vd",        "STV#Turnen!24",    "noel@stv.ch",         "Swiss Turnen Verein",     verein},
-            new Object[]{"Strava",         "https://strava.com",         "nveedee",        "Str@va!Run2024",   "noel@gmail.com",      "Lauf-Tracker",            verein},
-            new Object[]{"TeamApp",        "https://teamapp.com",        "noel.vd",        "Te@mApp#Verein!",  "noel@gmail.com",      "Vereins-App",             verein},
-            new Object[]{"SuisseID",       "https://suisseid.ch",        "nveedee",        "Su1sse!D#Safe",    "noel@gmail.com",      "E-Government Login",      verein},
-            new Object[]{"SportApp",       "https://sportapp.com",       "noel.vd",        "Sp0rtApp#2024!",   "noel@gmail.com",      "Fitness-Tracker",         verein},
+            new Object[]{"Vereinsportal",  "https://vereinsportal.ch",   "max.muster",     "Ver3in#Portal!24", "max@verein.ch",       "Mitgliederbereich",       verein},
+            new Object[]{"Strava",         "https://strava.com",         "mmuster",        "Str@va!Run2024",   "max@gmail.com",       "Lauf-Tracker",            verein},
+            new Object[]{"TeamApp",        "https://teamapp.com",        "max.muster",     "Te@mApp#Verein!",  "max@gmail.com",       "Vereins-App",             verein},
+            new Object[]{"SuisseID",       "https://suisseid.ch",        "mmuster",        "Su1sse!D#Safe",    "max@gmail.com",       "E-Government Login",      verein},
+            new Object[]{"SportApp",       "https://sportapp.com",       "max.muster",     "Sp0rtApp#2024!",   "max@gmail.com",       "Fitness-Tracker",         verein},
 
-            new Object[]{"LinkedIn",       "https://linkedin.com",       "noel-vd",        "L1nked!In#Jobs",   "noel@linkedin.com",   "Berufsnetzwerk",          arbeit},
-            new Object[]{"Slack",          "https://slack.com",          "noel@firma.ch",  "Sl@ck#Chat!2024",  "noel@firma.ch",       "Workspace: BBW",          arbeit},
-            new Object[]{"Confluence",     "https://confluence.atlassian.com","nveedee",   "C0nfl!uence#Wiki", "noel@firma.ch",       "Dokumentation",           arbeit},
-            new Object[]{"Jira",           "https://jira.atlassian.com", "nveedee",        "J1ra#Sprint!24",   "noel@firma.ch",       "Issue-Tracker",           arbeit},
-            new Object[]{"Zoom",           "https://zoom.us",            "noel@firma.ch",  "Z00m!Meet#2024",   "noel@firma.ch",       "",                        arbeit},
+            new Object[]{"LinkedIn",       "https://linkedin.com",       "max-muster",     "L1nked!In#Jobs",   "max@linkedin.com",    "Berufsnetzwerk",          arbeit},
+            new Object[]{"Slack",          "https://slack.com",          "max@firma.ch",   "Sl@ck#Chat!2024",  "max@firma.ch",        "Workspace: Firma",        arbeit},
+            new Object[]{"Confluence",     "https://confluence.atlassian.com","mmuster",   "C0nfl!uence#Wiki", "max@firma.ch",        "Dokumentation",           arbeit},
+            new Object[]{"Jira",           "https://jira.atlassian.com", "mmuster",        "J1ra#Sprint!24",   "max@firma.ch",        "Issue-Tracker",           arbeit},
+            new Object[]{"Zoom",           "https://zoom.us",            "max@firma.ch",   "Z00m!Meet#2024",   "max@firma.ch",        "",                        arbeit},
 
-            new Object[]{"Steam",          "https://store.steampowered.com","nveedee",     "St3am#Games!24",   "noel@gmail.com",      "2FA aktiv",               games},
-            new Object[]{"Epic Games",     "https://epicgames.com",      "nveedee",        "Ep!cG@mes#2024",   "noel@gmail.com",      "Fortnite, Rocket League", games},
-            new Object[]{"Battle.net",     "https://battle.net",         "nveedee#1234",   "B@ttl3Net!2024",   "noel@gmail.com",      "Blizzard Konto",          games},
-            new Object[]{"Nintendo",       "https://nintendo.com",       "nveedee",        "N1nt3ndo!@2024",   "noel@gmail.com",      "Switch Online",           games},
-            new Object[]{"PlayStation",    "https://playstation.com",    "nveedee",        "PS5#Play!2024",    "noel@gmail.com",      "PS Plus Essential",       games}
+            new Object[]{"Steam",          "https://store.steampowered.com","mmuster",     "St3am#Games!24",   "max@gmail.com",       "2FA aktiv",               games},
+            new Object[]{"Epic Games",     "https://epicgames.com",      "mmuster",        "Ep!cG@mes#2024",   "max@gmail.com",       "Fortnite, Rocket League", games},
+            new Object[]{"Battle.net",     "https://battle.net",         "mmuster#1234",   "B@ttl3Net!2024",   "max@gmail.com",       "Blizzard Konto",          games},
+            new Object[]{"Nintendo",       "https://nintendo.com",       "mmuster",        "N1nt3ndo!@2024",   "max@gmail.com",       "Switch Online",           games},
+            new Object[]{"PlayStation",    "https://playstation.com",    "mmuster",        "PS5#Play!2024",    "max@gmail.com",       "PS Plus Essential",       games}
         );
 
         // Modul 323: Stream + Lambda – jeder Seed-Eintrag wird über eine Higher-Order Function verarbeitet

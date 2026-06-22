@@ -4,27 +4,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
-// ── Auth ──────────────────────────────────────────────────────────────────────
-
-public class AuthDto {
-
-    @Data
-    public static class LoginRequest {
-        @NotBlank private String username;
-        @NotBlank private String password;
-    }
-
-    @Data
-    public static class LoginResponse {
-        private String token;
-        private String username;
-        public LoginResponse(String token, String username) {
-            this.token = token;
-            this.username = username;
-        }
-    }
-}
-
 // ── Category ──────────────────────────────────────────────────────────────────
 
 class CategoryDto {
